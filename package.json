@@ -9,9 +9,11 @@
     "build": "babel src --out-dir ./dist",
     "build:w": "babel src -w --out-dir ./dist"
   },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^5.3.0",
