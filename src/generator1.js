@@ -3,19 +3,21 @@ import 'babel-polyfill' // requires babel-polyfill to use generator functions
 // returns generator
 function* makeRangeIterator(start = 0, end = Infinity, step = 1) {
     let n = 0
+    let msg = null
     for (let i = start; i < end; i += step) {
         n++
-        yield i
+        // end = yield end
+        msg = yield msg
+        // yield 'hello world!'
     }
     return n
 }
 var rangeGenerator = makeRangeIterator(1, 4)
+console.log(rangeGenerator.next('hello')) // the first next function won't pass in value into the generator
+console.log(rangeGenerator.next('world')) // print: world
+console.log(rangeGenerator.next()) // print: undefined --> because nothing assigned to msg by next()
 console.log(rangeGenerator.next())
-console.log(rangeGenerator.next())
-console.log(rangeGenerator.next())
-console.log(rangeGenerator.next())
-console.log(rangeGenerator.next())
-console.log(rangeGenerator.next())
+console.log(rangeGenerator.next()) // value is always undefined
 
 //
 function* fibonacci() {

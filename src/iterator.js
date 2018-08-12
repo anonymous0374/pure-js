@@ -1,3 +1,4 @@
+// simple function
 function makeRangeIterator(start = 0, end = Infinity, step = 1) {
     var nextIndex = start
     var nIterated = 0
