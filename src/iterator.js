@@ -1,6 +1,6 @@
 function makeRangeIterator(start = 0, end = Infinity, step = 1) {
     var nextIndex = start
-    var n = 0
+    var nIterated = 0
 
     var rangeIterator = {
         next: function () {
@@ -12,7 +12,7 @@ function makeRangeIterator(start = 0, end = Infinity, step = 1) {
                 }
             } else if (nextIndex == end) {
                 result = {
-                    value: n,
+                    value: nIterated,
                     done: true
                 }
             } else {
@@ -21,7 +21,7 @@ function makeRangeIterator(start = 0, end = Infinity, step = 1) {
                 }
             }
             nextIndex += step
-            n += 2
+            nIterated += 1
             return result
         }
     }

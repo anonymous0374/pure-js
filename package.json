@@ -5,6 +5,9 @@
   "repository": "git@github.com:anonymous0374/pure-js.git",
   "author": "anonymous0374 <377738226@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir ./dist"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
